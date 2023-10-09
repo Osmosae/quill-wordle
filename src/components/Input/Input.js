@@ -1,13 +1,14 @@
 import React, { useState } from "react"
+// import UserGuesses from "../UserGuesses/UserGuesses"
 
-function Input() {
-    const [guess, setGuess] = useState("")
+function Input({ handleSubmitGuess }) {
+    const [tentativeGuess, setTentativeGuess] = useState("")
 
     function handleSubmit(e) {
         e.preventDefault()
         // if (guess.length !== 5) return
-        console.log({ guess })
-        setGuess("")
+        handleSubmitGuess(tentativeGuess)
+        setTentativeGuess("")
     }
     return (
         <div>
@@ -18,10 +19,10 @@ function Input() {
                     maxLength={5}
                     pattern="[a-zA-Z]{5}"
                     title="Please Enter 5 Letters"
-                    value={guess}
+                    value={tentativeGuess}
                     onChange={(e) => {
                         const nextGuess = e.target.value.toUpperCase()
-                        setGuess(nextGuess)
+                        setTentativeGuess(nextGuess)
                     }}
                     id="guess-input"
                     type="text"
