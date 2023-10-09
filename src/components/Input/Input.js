@@ -5,7 +5,7 @@ function Input() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        if (guess.length !== 5) return
+        // if (guess.length !== 5) return
         console.log({ guess })
         setGuess("")
     }
@@ -15,8 +15,9 @@ function Input() {
                 <label htmlFor="guess-input">Enter a guess</label>
                 <input
                     required
-                    minLength={5}
                     maxLength={5}
+                    pattern="[a-zA-Z]{5}"
+                    title="Please Enter 5 Letters"
                     value={guess}
                     onChange={(e) => {
                         const nextGuess = e.target.value.toUpperCase()
