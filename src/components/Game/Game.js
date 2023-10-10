@@ -13,15 +13,11 @@ console.info({ answer })
 function Game() {
     const [guesses, setGuesses] = useState([])
     function handleSubmitGuess(tentativeGuess) {
-        const nextGuess = {
-            value: tentativeGuess,
-            id: `${tentativeGuess}-${Math.floor(Math.random() * 99999)}`,
-        }
-        setGuesses([...guesses, nextGuess])
+        setGuesses([...guesses, tentativeGuess])
     }
     return (
         <>
-            <UserGuesses guesses={guesses} />
+            <UserGuesses answer={answer} guesses={guesses} />
             <Input handleSubmitGuess={handleSubmitGuess} />
         </>
     )
