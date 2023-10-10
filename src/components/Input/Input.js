@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 // import UserGuesses from "../UserGuesses/UserGuesses"
 
-function Input({ handleSubmitGuess }) {
+function Input({ handleSubmitGuess, gameStatus }) {
     const [tentativeGuess, setTentativeGuess] = useState("")
 
     function handleSubmit(e) {
@@ -16,6 +16,7 @@ function Input({ handleSubmitGuess }) {
                 <label htmlFor="guess-input">Enter a guess</label>
                 <input
                     required
+                    disabled={gameStatus !== "running"}
                     maxLength={5}
                     pattern="[a-zA-Z]{5}"
                     title="Please Enter 5 Letters"
