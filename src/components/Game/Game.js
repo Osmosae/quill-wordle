@@ -15,7 +15,7 @@ function Game() {
     function handleSubmitGuess(tentativeGuess) {
         const nextGuess = {
             value: tentativeGuess,
-            id: `${tentativeGuess}-${Math.floor(Math.random() * (99999 - 0) + 0)}`,
+            id: `${tentativeGuess}-${Math.floor(Math.random() * 99999)}`,
         }
         setGuesses([...guesses, nextGuess])
     }
