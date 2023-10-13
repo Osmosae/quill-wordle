@@ -16,4 +16,5 @@ export default Banner
 Banner.propTypes = {
     emotion: PropTypes.string,
     children: PropTypes.any,
+    restart: PropTypes.func,
 }

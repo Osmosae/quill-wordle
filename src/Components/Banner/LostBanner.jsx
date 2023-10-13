@@ -16,4 +16,5 @@ export default LostBanner
 
 LostBanner.propTypes = {
     answer: PropTypes.string,
+    restart: PropTypes.func,
 }

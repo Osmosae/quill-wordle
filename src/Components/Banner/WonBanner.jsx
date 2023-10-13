@@ -17,4 +17,5 @@ export default WonBanner
 
 WonBanner.propTypes = {
     numOfGuesses: PropTypes.number,
+    restart: PropTypes.func,
 }
