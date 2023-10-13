@@ -1,7 +1,7 @@
 function Header() {
     return (
         <header>
-            <h1>Word Game</h1>
+            <h1>Quill&apos;s Wordle Game</h1>
         </header>
     )
 }

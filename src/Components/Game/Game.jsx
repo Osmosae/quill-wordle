@@ -23,7 +23,6 @@ function Game() {
     }
     return (
         <>
-            {gameStatus}
             <RenderGuesses guesses={guesses} answer={answer} />
             <UserInput handleAddGuesses={handleAddGuesses} gameStatus={gameStatus} />
             {gameStatus === "won" && <WonBanner numOfGuesses={guesses.length} />}
