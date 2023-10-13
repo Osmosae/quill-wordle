@@ -7,7 +7,7 @@ import WonBanner from "../Banner/WonBanner"
 import LostBanner from "../Banner/LostBanner"
 
 // Pick a random word on every pageload.
-const answer = sample(WORDS)
+let answer = sample(WORDS)
 // To make debugging easier, we'll log the solution in the console.
 console.info({ answer })
 
@@ -21,12 +21,18 @@ function Game() {
         if (enteredGuess === answer) setGameStatus("won")
         if (nextGuesses.length >= 6) setGameStatus("lost")
     }
+    function restart() {
+        setGuesses([])
+        setGameStatus("running")
+        answer = sample(WORDS)
+        console.info({ answer })
+    }
     return (
         <>
             <RenderGuesses guesses={guesses} answer={answer} />
             <UserInput handleAddGuesses={handleAddGuesses} gameStatus={gameStatus} />
-            {gameStatus === "won" && <WonBanner numOfGuesses={guesses.length} />}
-            {gameStatus === "lost" && <LostBanner answer={answer} />}
+            {gameStatus === "won" && <WonBanner numOfGuesses={guesses.length} restart={restart} />}
+            {gameStatus === "lost" && <LostBanner answer={answer} restart={restart} />}
         </>
     )
 }

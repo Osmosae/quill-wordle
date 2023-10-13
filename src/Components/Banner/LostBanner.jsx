@@ -2,9 +2,9 @@ import Banner from "./Banner"
 
 import PropTypes from "prop-types"
 
-function LostBanner({ answer }) {
+function LostBanner({ answer, restart }) {
     return (
-        <Banner emotion="sad">
+        <Banner emotion="sad" restart={restart}>
             <p>
                 Sorry, the correct answer is <strong>{answer}</strong>.
             </p>
