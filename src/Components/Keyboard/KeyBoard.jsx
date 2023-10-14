@@ -1,10 +1,10 @@
 import PropTypes from "prop-types"
 
-function Row({ level, rowArr }) {
+function Row({ level, rowArr, letterColorMap }) {
     return (
         <div className={`${level}-row`}>
             {rowArr.map((letter) => (
-                <span className="small-cell" key={letter}>
+                <span className={`small-cell ${letterColorMap[letter] || ""}`} key={letter}>
                     {letter}
                 </span>
             ))}
@@ -13,14 +13,15 @@ function Row({ level, rowArr }) {
 }
 
 function KeyBoard({ letterColorMap }) {
-    const topRow = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"]
-    const midRow = ["a", "s", "d", "f", "g", "h", "j", "k", "l"]
-    const botRow = ["z", "x", "c", "v", "b", "n", "m"]
+    if (letterColorMap) console.log(letterColorMap)
+    const topRow = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"]
+    const midRow = ["A", "S", "D", "F", "G", "H", "J", "K", "L"]
+    const botRow = ["Z", "X", "C", "V", "B", "N", "M"]
     return (
         <div className="keyboard">
-            <Row level="first" rowArr={topRow} />
-            <Row level="second" rowArr={midRow} />
-            <Row level="third" rowArr={botRow} />
+            <Row level="first" rowArr={topRow} letterColorMap={letterColorMap} />
+            <Row level="second" rowArr={midRow} letterColorMap={letterColorMap} />
+            <Row level="third" rowArr={botRow} letterColorMap={letterColorMap} />
         </div>
     )
 }
