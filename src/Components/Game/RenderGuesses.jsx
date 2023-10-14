@@ -8,7 +8,6 @@ import PropTypes from "prop-types"
 
 function RenderGuesses({ guesses, answer }) {
     const letterStatusMap = guesses.map((guess) => checkGuess(guess, answer))
-    console.log(letterStatusMap)
 
     function getStatusByLetter(onUserGuesses) {
         const statusObj = {}

@@ -13,7 +13,6 @@ function Row({ level, rowArr, letterColorMap }) {
 }
 
 function KeyBoard({ letterColorMap }) {
-    if (letterColorMap) console.log(letterColorMap)
     const topRow = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"]
     const midRow = ["A", "S", "D", "F", "G", "H", "J", "K", "L"]
     const botRow = ["Z", "X", "C", "V", "B", "N", "M"]
