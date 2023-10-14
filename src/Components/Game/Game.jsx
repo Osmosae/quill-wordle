@@ -18,8 +18,8 @@ function Game() {
     function handleAddGuesses(enteredGuess) {
         const nextGuesses = [...guesses, enteredGuess]
         setGuesses(nextGuesses)
-        if (enteredGuess === answer) setGameStatus("won")
         if (nextGuesses.length >= 6) setGameStatus("lost")
+        if (enteredGuess === answer) setGameStatus("won")
     }
     function restart() {
         setGuesses([])
