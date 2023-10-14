@@ -1,8 +1,8 @@
-import { sample } from "../../helpers/utils"
+import { useState } from "react"
 import { WORDS } from "../../data/data"
+import { sample } from "../../helpers/utils"
 import UserInput from "./UserInput"
 import RenderGuesses from "./RenderGuesses"
-import { useState } from "react"
 import WonBanner from "../Banner/WonBanner"
 import LostBanner from "../Banner/LostBanner"
 
@@ -27,6 +27,7 @@ function Game() {
         answer = sample(WORDS)
         console.info({ answer })
     }
+
     return (
         <>
             <RenderGuesses guesses={guesses} answer={answer} />
