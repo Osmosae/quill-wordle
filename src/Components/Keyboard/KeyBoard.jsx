@@ -33,4 +33,5 @@ KeyBoard.propTypes = {
 Row.propTypes = {
     level: PropTypes.string,
     rowArr: PropTypes.array,
+    letterColorMap: PropTypes.object,
 }
