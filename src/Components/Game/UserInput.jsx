@@ -12,8 +12,8 @@ function UserInput({ handleAddGuesses, gameStatus }) {
 
     return (
         <form className="guess-input-wrapper" onSubmit={handleSubmit}>
-            <label htmlFor="guess-input">Enter guess:</label>
-            <input required minLength={5} maxLength={5} pattern="[a-zA-Z]{5}" id="guess-input" type="text" value={enteredGuess} onChange={(e) => setEnteredGuess(e.target.value.toUpperCase())} disabled={gameStatus !== "running"} />
+            {/* <label htmlFor="guess-input">Enter guess:</label> */}
+            <input required minLength={5} maxLength={5} pattern="[a-zA-Z]{5}" id="guess-input" type="text" value={enteredGuess} placeholder="Enter Guess" onChange={(e) => setEnteredGuess(e.target.value.toUpperCase())} disabled={gameStatus !== "running"} />
         </form>
     )
 }
